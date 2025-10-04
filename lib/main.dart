@@ -49,6 +49,9 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+//
+// 1. StatelessWidget – Приветственный экран
+//
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
@@ -61,7 +64,7 @@ class WelcomePage extends StatelessWidget {
           padding: EdgeInsets.all(16),
           child: Text(
             'Добро пожаловать в ежедневник!\n\n'
-                'Здесь вы можете вести заметки, записывать задачи, '
+                'Здесь вы можете вести заметки, управлять задачами, '
                 'отмечать настроение и просматривать профиль.',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 18),
@@ -72,6 +75,9 @@ class WelcomePage extends StatelessWidget {
   }
 }
 
+//
+// 2. StatefulWidget – Заметки
+//
 class NotesPage extends StatefulWidget {
   const NotesPage({super.key});
 
@@ -114,10 +120,23 @@ class _NotesPageState extends State<NotesPage> {
               child: ListView.builder(
                 itemCount: _notes.length,
                 itemBuilder: (context, index) {
-                  return Card(
-                    child: ListTile(
-                      leading: const Icon(Icons.note),
-                      title: Text(_notes[index]),
+                  return Container(
+                    padding: const EdgeInsets.all(12),
+                    margin: const EdgeInsets.symmetric(vertical: 6),
+                    decoration: BoxDecoration(
+                      color: Colors.blue.shade50,
+                      border: Border.all(color: Colors.blue),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.note, color: Colors.blue),
+                        const SizedBox(width: 10),
+                        Text(
+                          _notes[index],
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ],
                     ),
                   );
                 },
@@ -130,6 +149,9 @@ class _NotesPageState extends State<NotesPage> {
   }
 }
 
+//
+// 3. StatefulWidget – Задачи
+//
 class TasksPage extends StatefulWidget {
   const TasksPage({super.key});
 
@@ -139,9 +161,9 @@ class TasksPage extends StatefulWidget {
 
 class _TasksPageState extends State<TasksPage> {
   final List<Map<String, dynamic>> _tasks = [
-    {'title': 'Сделать дз по РКМП', 'done': false},
-    {'title': 'Пройти 10000 шагов', 'done': false},
-    {'title': 'Забрать посылку', 'done': false},
+    {'title': 'Сделать дз по Flutter', 'done': false},
+    {'title': 'Пройтись пешком 30 минут', 'done': false},
+    {'title': 'Позвонить другу', 'done': false},
   ];
 
   @override
@@ -166,6 +188,9 @@ class _TasksPageState extends State<TasksPage> {
   }
 }
 
+//
+// 4. StatefulWidget – Настроение
+//
 class MoodPage extends StatefulWidget {
   const MoodPage({super.key});
 
@@ -205,6 +230,9 @@ class _MoodPageState extends State<MoodPage> {
   }
 }
 
+//
+// 5. StatelessWidget – Профиль
+//
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 

@@ -187,7 +187,8 @@ class MoodPage extends StatefulWidget {
 }
 
 class _MoodPageState extends State<MoodPage> {
-  String _mood = '😊'; // настроение по умолчанию
+  String _mood = '😊';
+
 
   void _setMood(String emoji) {
     setState(() {
@@ -202,16 +203,38 @@ class _MoodPageState extends State<MoodPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Сегодняшнее настроение: $_mood', style: const TextStyle(fontSize: 22)),
+          Text('Сегодняшнее настроение: $_mood', style: const TextStyle(fontSize: 30)),
           const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(onPressed: () => _setMood('😃'), child: const Text('😃')),
-              ElevatedButton(onPressed: () => _setMood('😐'), child: const Text('😐')),
-              ElevatedButton(onPressed: () => _setMood('😢'), child: const Text('😢')),
+              ElevatedButton(
+                onPressed: () => _setMood('😃'),
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(80, 80),
+                  textStyle: const TextStyle(fontSize: 30),
+                ),
+                child: const Text('😃'),
+              ),
+              ElevatedButton(
+                onPressed: () => _setMood('😐'),
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(80, 80),
+                  textStyle: const TextStyle(fontSize: 30),
+                ),
+                child: const Text('😐'),
+              ),
+              ElevatedButton(
+                onPressed: () => _setMood('😢'),
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(80, 80),
+                  textStyle: const TextStyle(fontSize: 30),
+                ),
+                child: const Text('😢'),
+              ),
             ],
           )
+
         ],
       ),
     );

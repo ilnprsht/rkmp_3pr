@@ -152,9 +152,9 @@ class TasksPage extends StatefulWidget {
 
 class _TasksPageState extends State<TasksPage> {
   final List<Map<String, dynamic>> _tasks = [
-    {'title': 'Сделать дз по Flutter', 'done': false},
-    {'title': 'Пройтись пешком 30 минут', 'done': false},
-    {'title': 'Позвонить другу', 'done': false},
+    {'title': 'Сделать дз по РКМП', 'done': false},
+    {'title': 'Пройти 10000 шагов', 'done': false},
+    {'title': 'Забрать посылку', 'done': false},
   ];
 
   @override

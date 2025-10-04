@@ -49,9 +49,6 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-//
-// 1. StatelessWidget – Приветственный экран
-//
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
@@ -75,9 +72,6 @@ class WelcomePage extends StatelessWidget {
   }
 }
 
-//
-// 2. StatefulWidget – Заметки
-//
 class NotesPage extends StatefulWidget {
   const NotesPage({super.key});
 
@@ -149,9 +143,6 @@ class _NotesPageState extends State<NotesPage> {
   }
 }
 
-//
-// 3. StatefulWidget – Задачи
-//
 class TasksPage extends StatefulWidget {
   const TasksPage({super.key});
 
@@ -188,9 +179,6 @@ class _TasksPageState extends State<TasksPage> {
   }
 }
 
-//
-// 4. StatefulWidget – Настроение
-//
 class MoodPage extends StatefulWidget {
   const MoodPage({super.key});
 
@@ -230,9 +218,6 @@ class _MoodPageState extends State<MoodPage> {
   }
 }
 
-//
-// 5. StatelessWidget – Профиль
-//
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
